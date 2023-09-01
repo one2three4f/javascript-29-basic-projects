@@ -5,16 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starter</title>
     <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-
+    <script
+      src="https://kit.fontawesome.com/5264ff8536.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>review project</h1>
+    <main>
+      <div class="container">
+        <h1 class="title">Our reviews</h1>
+        <div class="underline"></div>
+        <!-- review -->
+        <div class="review">
+          <div class="img-container tier-s">
+            <!-- review: wtf deos referrerpolicy do? it fixes it when i use imgur photos -->
+            <img
+              src="person-1.jpeg"
+              id="person-img"
+              alt=""
+              referrerpolicy="no-referrer"
+            />
+          </div>
+          <h4 class="author">John Doe</h4>
+          <p class="job">Job Title</p>
+          <p id="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+            consequatur labore expedita dicta laboriosam explicabo rem nostrum
+            asperiores, maiores modi sunt, iste quod amet? Ipsam ut ducimus
+            quidem veniam officiis.
+          </p>
+          <div class="button-container">
+            <button class="prev-btn">
+              <i class="fa-solid fa-angles-left"></i>
+            </button>
+            <button class="next-btn">
+              <i class="fa-solid fa-angles-right"></i>
+            </button>
+          </div>
+          <button class="rand-btn">random profile</button>
+        </div>
+      </div>
+    </main>
     <!-- javascript -->
     <script src="app.js"></script>
   </body>

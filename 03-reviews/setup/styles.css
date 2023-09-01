@@ -204,9 +204,10 @@ main {
   position: relative;
 }
 .img-container::after {
-  font-family: "Font Awesome 5 Free";
+  /* font-family: "Font Awesome 5 Free"; */
   font-weight: 900;
-  content: "\f10e";
+  /* content: attr(tier); */
+  /* content: "\f10e"; */
   position: absolute;
   top: 0;
   left: 0;
@@ -219,6 +220,15 @@ main {
   background: var(--clr-primary-5);
   color: var(--clr-white);
 }
+/* .img-container.tier-S::after {
+  content: "S";
+}
+.img-container.tier-A::after {
+  content: "A";
+}
+.img-container.tier-B::after {
+  content: "B";
+} */
 .img-container::before {
   content: "";
   width: 100%;
@@ -255,7 +265,7 @@ main {
 .next-btn:hover {
   color: var(--clr-primary-5);
 }
-.random-btn {
+.rand-btn {
   margin-top: 0.5rem;
   background: var(--clr-primary-10);
   color: var(--clr-primary-5);
