@@ -52,7 +52,125 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+
+  --gray-000: #ffffff;
+  --gray-050: #f2f2f2;
+  --gray-100: #fafafa;
+  --gray-200: #f5f5f5;
+  --gray-300: #ededed;
+  --gray-400: #e5e5e5;
+  --gray-500: #cdcdcd;
+  --gray-600: #a8a8a8;
+  --gray-700: #747474;
+  --gray-800: #393939;
+  --gray-900: #000000;
+  --red-050: #fff7f6;
+  --red-100: #ffedeb;
+  --red-200: #ffe0db;
+  --red-300: #ffd3c9;
+  --red-400: #ffb7a4;
+  --red-500: #ff9574;
+  --red-600: #ff6e3c;
+  --red-700: #ff4500;
+  --red-800: #aa2e00;
+  --red-900: #541600;
+  --green-050: #f4fff4;
+  --green-100: #e9ffe8;
+  --green-200: #d9ffd8;
+  --green-300: #c9ffc7;
+  --green-400: #a6ffa3;
+  --green-500: #7cf178;
+  --green-600: #51da4c;
+  --green-700: #3fa93b;
+  --green-800: #2d712a;
+  --green-900: #193718;
+  --blue-050: #f4fbff;
+  --blue-100: #e5f1ff;
+  --blue-200: #cbdcff;
+  --blue-300: #afc1ff;
+  --blue-400: #7989ff;
+  --blue-500: #3c46ff;
+  --blue-600: #0000ff;
+  --blue-700: #0404ac;
+  --blue-800: #020267;
+  --blue-900: #00002e;
+  --cyan-050: #f0ffff;
+  --cyan-100: #e0ffff;
+  --cyan-200: #caffff;
+  --cyan-300: #b3ffff;
+  --cyan-400: #82ffff;
+  --cyan-500: #42ffff;
+  --cyan-600: #00ffff;
+  --cyan-700: #00e7e7;
+  --cyan-800: #00b3b3;
+  --cyan-900: #005454;
+  --yellow-050: #ffffdb;
+  --yellow-100: #ffffb6;
+  --yellow-200: #ffff8f;
+  --yellow-300: #ffff66;
+  --yellow-400: #fff639;
+  --yellow-500: #f5e60d;
+  --yellow-600: #cfc52c;
+  --yellow-700: #a19a3a;
+  --yellow-800: #6c6837;
+  --yellow-900: #343322;
+  --magenta-050: #fff9ff;
+  --magenta-100: #fff2ff;
+  --magenta-200: #ffd7ff;
+  --magenta-300: #ffc1ff;
+  --magenta-400: #ff8bff;
+  --magenta-500: #ff45ff;
+  --magenta-600: #ff00ff;
+  --magenta-700: #c500c5;
+  --magenta-800: #830083;
+  --magenta-900: #400040;
+  --orange-050: #fffcf5;
+  --orange-100: #fff9ea;
+  --orange-200: #fff1d6;
+  --orange-300: #ffe8c1;
+  --orange-400: #ffc98a;
+  --orange-500: #ffa045;
+  --orange-600: #fe7600;
+  --orange-700: #c45600;
+  --orange-800: #833600;
+  --orange-900: #401900;
+  --violet-050: #fff9ff;
+  --violet-100: #fff2ff;
+  --violet-200: #fee6ff;
+  --violet-300: #fcdaff;
+  --violet-400: #ebbbff;
+  --violet-500: #d292ff;
+  --violet-600: #b161fd;
+  --violet-700: #8a2be2;
+  --violet-800: #571397;
+  --violet-900: #28044a;
+  --brown-050: #f7ece6;
+  --brown-100: #f0dacf;
+  --brown-200: #e8c7b6;
+  --brown-300: #e1b59f;
+  --brown-400: #cb9379;
+  --brown-500: #b67252;
+  --brown-600: #a0522d;
+  --brown-700: #793a1c;
+  --brown-800: #51230d;
+  --brown-900: #2a1003;
 }
+.theme-dark-magenta {
+  --text-primary: var(--green-600);
+  --text-primary-rgb: 81, 218, 76;
+  --text-secondary: var(--green-700);
+  --text-interactive-primary: var(--green-600);
+  --border-primary: var(--green-600);
+  --border-secondary: rgba(81, 218, 76, 0.2);
+  --background-primary: var(--magenta-900);
+  --background-interactive-primary-hover: var(--magenta-800);
+  --text-inverse: var(--background-primary);
+  --border-inverse: var(--background-primary);
+  --background-inverse: var(--text-primary);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
 /*
 =============== 
 Global Styles
@@ -176,7 +294,7 @@ Sidebar
   top: 0;
   /* left: 100%; this works too to hide the sidebar*/
   left: 0;
-  background-color: var(--clr-primary-9);
+  background-color: var(--background-primary);
   /* height be dynamically changed in relation to screen size */
   height: 100%;
   width: 500px;
@@ -203,7 +321,6 @@ Sidebar
 
 .close-btn {
   font-size: 2.5rem;
-  color: var(--ff-primary);
   border: none;
   cursor: pointer;
   transition: all 0.5s;
@@ -236,8 +353,8 @@ Sidebar
 
 /* review: why does this work instead of li:hover */
 .sidebar-links a:hover {
-  background: var(--clr-primary-8);
-  color: var(--clr-primary-5);
+  background: var(--background-interactive-primary-hover);
+  color: var(--text-inverse);
   padding-left: 2rem;
 }
 
@@ -254,6 +371,8 @@ Sidebar
   transition: all 0.5s;
 }
 
-.social-links i:hover {
-  color: black;
-}
+/* fun to test shit out but my css is too shit atm */
+/* .social-links i:hover {
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+} */
