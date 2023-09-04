@@ -156,3 +156,104 @@ main {
 Sidebar
 ===============
 */
+/* body {
+  height: 200vh;
+} */
+
+.sidebar-toggle {
+  position: absolute;
+  right: 3rem;
+  top: 2em;
+  font-size: 2rem;
+  color: skyblue;
+  border: none;
+  /* requires animation/key frames */
+  /* duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  /* left: 100%; this works too to hide the sidebar*/
+  left: 0;
+  background-color: var(--clr-primary-9);
+  /* height be dynamically changed in relation to screen size */
+  height: 100%;
+  width: 500px;
+  /* width: 100%; */
+  /* note: seems like modern standard to use translate(), scale(), instead of hacks */
+  transform: translate(-100%);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  transition: transform 0.5s;
+}
+
+.show-sidebar {
+  transform: translate(0);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--clr-primary-1);
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+}
+
+.close-btn {
+  font-size: 2.5rem;
+  color: var(--ff-primary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.close-btn:hover {
+  transform: scale(0.8);
+}
+
+.logo {
+  height: 40px;
+  /* what this do */
+  justify-self: center;
+}
+
+/* note: need better way to delete mult lines in v mode */
+/* .sidebar-links {
+  padding: 1rem 1.5rem;
+} */
+
+.sidebar-links a {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: lighter;
+  transition: all 0.5s;
+  color: var(--clr--grey-5);
+}
+
+/* review: why does this work instead of li:hover */
+.sidebar-links a:hover {
+  background: var(--clr-primary-8);
+  color: var(--clr-primary-5);
+  padding-left: 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.social-links li {
+  margin-right: 25px;
+  font-size: 2rem;
+  transition: all 0.5s;
+}
+
+.social-links i:hover {
+  color: black;
+}

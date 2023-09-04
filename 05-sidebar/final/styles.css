@@ -146,7 +146,7 @@ p {
   }
 }
 main {
-  min-height: 100vh;
+  min-height: 200vh;
   display: grid;
   place-items: center;
 }
@@ -252,8 +252,8 @@ Sidebar
 .show-sidebar {
   transform: translate(0);
 }
-@media screen and (min-width: 676px) {
+/* @media screen and (min-width: 676px) {
   .sidebar {
     width: 400px;
   }
-}
+} */
