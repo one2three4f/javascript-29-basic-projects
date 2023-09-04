@@ -217,6 +217,7 @@ Modal
   place-items: center;
   transition: var(--transition);
   /* note: this hides it, what does it do? */
+  /* hides it, but keeps it in the document flow DOM */
   visibility: hidden;
   z-index: -10;
 }
