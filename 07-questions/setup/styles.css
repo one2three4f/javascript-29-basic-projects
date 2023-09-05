@@ -274,12 +274,13 @@ Questions
 .question-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 25px;
+  align-items: center;
 }
 
 .question-title {
   color: black;
   letter-spacing: 0.5rem;
+  margin-bottom: 0;
 }
 
 .question-text {
@@ -316,6 +317,14 @@ Questions
   display: none;
 }
 
-/* .question-open:hover {
+.question-btn i {
+  transition: all 0.5s;
+}
+
+.question-btn .fa-square-minus:hover {
   transform: rotate(90deg);
-} */
+}
+
+.question-btn .fa-square-plus:hover {
+  transform: rotate(-90deg);
+}
