@@ -1,0 +1,7 @@
+Understand the relationship between HTML, CSS and JS.
+-HTML layout
+    -Sets element layout and CSS
+-CSS controls display
+    -It controls display, but is manipulated through JS and HTML
+
+-JS manipulates HTML and CSS

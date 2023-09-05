@@ -181,7 +181,7 @@ main {
 Questions
 ===============
 */
-.title {
+/* .title {
   margin-top: 15vh;
   margin-bottom: 4rem;
 }
@@ -229,7 +229,7 @@ Questions
 }
 .question-text p {
   margin-bottom: 0;
-}
+} */
 /* hide text */
 /* .question-text {
   display: none;
@@ -245,4 +245,77 @@ Questions
 }
 .show-text .plus-icon {
   display: none;
+} */
+
+.container {
+  display: grid;
+  place-items: center;
+  font-size: 125px;
+  text-transform: capitalize;
+}
+
+.title {
+  font-family: "Great Vibes";
+  margin-bottom: 35px;
+}
+.logo {
+  width: 200px;
+}
+
+.question {
+  width: 900px;
+  font-size: 20px;
+  border: 2px black solid;
+  border-radius: 7px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.question-title {
+  color: black;
+  letter-spacing: 0.5rem;
+}
+
+.question-text {
+  display: none;
+}
+
+.question-open .question-text {
+  display: block;
+  padding-top: 20px;
+  margin-top: 15px;
+  border-top: solid black 1.5px;
+}
+
+.question-btn {
+  border: none;
+  font-size: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.question-open .fa-square-plus {
+  /* default */
+  display: none;
+}
+
+.question-open .fa-square-minus {
+  display: block;
+}
+.fa-square-plus {
+  display: block;
+}
+
+.fa-square-minus {
+  display: none;
+}
+
+/* .question-open:hover {
+  transform: rotate(90deg);
 } */
