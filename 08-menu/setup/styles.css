@@ -73,6 +73,7 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
+  background-color: var(--background-primary);
 }
 ul {
   list-style-type: none;
@@ -80,9 +81,9 @@ ul {
 a {
   text-decoration: none;
 }
-img:not(.logo) {
+/* img:not(.logo) {
   width: 100%;
-}
+} */
 img {
   display: block;
 }
@@ -136,129 +137,244 @@ p {
     line-height: 1;
   }
 }
-/*  global classes */
 
-.btn {
-  text-transform: uppercase;
-  background: transparent;
-  color: var(--clr-black);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid var(--clr-black);
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius);
-}
-.btn:hover {
-  color: var(--clr-white);
-  background: var(--clr-black);
-}
-/* section */
-.section {
-  padding: 5rem 0;
+/* themes */
+:root {
+  --gray-000: #ffffff;
+  --gray-050: #f2f2f2;
+  --gray-100: #fafafa;
+  --gray-200: #f5f5f5;
+  --gray-300: #ededed;
+  --gray-400: #e5e5e5;
+  --gray-500: #cdcdcd;
+  --gray-600: #a8a8a8;
+  --gray-700: #747474;
+  --gray-800: #393939;
+  --gray-900: #000000;
+  --red-050: #fff7f6;
+  --red-100: #ffedeb;
+  --red-200: #ffe0db;
+  --red-300: #ffd3c9;
+  --red-400: #ffb7a4;
+  --red-500: #ff9574;
+  --red-600: #ff6e3c;
+  --red-700: #ff4500;
+  --red-800: #aa2e00;
+  --red-900: #541600;
+  --green-050: #f4fff4;
+  --green-100: #e9ffe8;
+  --green-200: #d9ffd8;
+  --green-300: #c9ffc7;
+  --green-400: #a6ffa3;
+  --green-500: #7cf178;
+  --green-600: #51da4c;
+  --green-700: #3fa93b;
+  --green-800: #2d712a;
+  --green-900: #193718;
+  --blue-050: #f4fbff;
+  --blue-100: #e5f1ff;
+  --blue-200: #cbdcff;
+  --blue-300: #afc1ff;
+  --blue-400: #7989ff;
+  --blue-500: #3c46ff;
+  --blue-600: #0000ff;
+  --blue-700: #0404ac;
+  --blue-800: #020267;
+  --blue-900: #00002e;
+  --cyan-050: #f0ffff;
+  --cyan-100: #e0ffff;
+  --cyan-200: #caffff;
+  --cyan-300: #b3ffff;
+  --cyan-400: #82ffff;
+  --cyan-500: #42ffff;
+  --cyan-600: #00ffff;
+  --cyan-700: #00e7e7;
+  --cyan-800: #00b3b3;
+  --cyan-900: #005454;
+  --yellow-050: #ffffdb;
+  --yellow-100: #ffffb6;
+  --yellow-200: #ffff8f;
+  --yellow-300: #ffff66;
+  --yellow-400: #fff639;
+  --yellow-500: #f5e60d;
+  --yellow-600: #cfc52c;
+  --yellow-700: #a19a3a;
+  --yellow-800: #6c6837;
+  --yellow-900: #343322;
+  --magenta-050: #fff9ff;
+  --magenta-100: #fff2ff;
+  --magenta-200: #ffd7ff;
+  --magenta-300: #ffc1ff;
+  --magenta-400: #ff8bff;
+  --magenta-500: #ff45ff;
+  --magenta-600: #ff00ff;
+  --magenta-700: #c500c5;
+  --magenta-800: #830083;
+  --magenta-900: #400040;
+  --orange-050: #fffcf5;
+  --orange-100: #fff9ea;
+  --orange-200: #fff1d6;
+  --orange-300: #ffe8c1;
+  --orange-400: #ffc98a;
+  --orange-500: #ffa045;
+  --orange-600: #fe7600;
+  --orange-700: #c45600;
+  --orange-800: #833600;
+  --orange-900: #401900;
+  --violet-050: #fff9ff;
+  --violet-100: #fff2ff;
+  --violet-200: #fee6ff;
+  --violet-300: #fcdaff;
+  --violet-400: #ebbbff;
+  --violet-500: #d292ff;
+  --violet-600: #b161fd;
+  --violet-700: #8a2be2;
+  --violet-800: #571397;
+  --violet-900: #28044a;
+  --brown-050: #f7ece6;
+  --brown-100: #f0dacf;
+  --brown-200: #e8c7b6;
+  --brown-300: #e1b59f;
+  --brown-400: #cb9379;
+  --brown-500: #b67252;
+  --brown-600: #a0522d;
+  --brown-700: #793a1c;
+  --brown-800: #51230d;
+  --brown-900: #2a1003;
+  /* --text-primary: var(--gray-900);
+  --text-primary-rgb: 0, 0, 0;
+  --text-inverse: var(--background-primary);
+  --text-secondary: var(--gray-700);
+  --text-interactive-primary: var(--gray-900);
+  --border-primary: var(--gray-900);
+  --border-secondary: rgba(0, 0, 0, 0.2);
+  --border-inverse: var(--background-primary);
+  --background-primary: var(--gray-000);
+  --background-inverse: var(--text-primary);
+  --background-success: var(--green-200);
+  --background-interactive-primary-hover: var(--gray-400);
+  --transparent: transparent; */
+  --text-primary: var(--yellow-900);
+  --text-primary-rgb: 52, 51, 34;
+  --text-secondary: var(--yellow-800);
+  --text-interactive-primary: var(--yellow-900);
+  --border-primary: var(--yellow-900);
+  --border-secondary: rgba(52, 51, 34, 0.2);
+  --background-primary: var(--blue-100);
+  --background-interactive-primary-hover: var(--blue-200);
+  --text-inverse: var(--background-primary);
+  --border-inverse: var(--background-primary);
+  --background-inverse: var(--text-primary);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
 }
 
-main {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
+.theme-light-blue {
+  --text-primary: var(--yellow-900);
+  --text-primary-rgb: 52, 51, 34;
+  --text-secondary: var(--yellow-800);
+  --text-interactive-primary: var(--yellow-900);
+  --border-primary: var(--yellow-900);
+  --border-secondary: rgba(52, 51, 34, 0.2);
+  --background-primary: var(--blue-100);
+  --background-interactive-primary-hover: var(--blue-200);
+  --text-inverse: var(--background-primary);
+  --border-inverse: var(--background-primary);
+  --background-inverse: var(--text-primary);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
 }
-/*
-=============== 
-Menu
-===============
-*/
 
-.menu {
-  padding: 5rem 0;
-}
-.title {
+/* title container */
+.title-container {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: auto auto;
+  margin-bottom: 50px;
+  color: var(--text-primary);
+  border-color: var(--border-primary);
 }
-.underline {
-  width: 5rem;
-  height: 0.25rem;
-  background: var(--clr-gold);
-  margin-left: auto;
-  margin-right: auto;
+/* containers */
+.container {
+  padding: 5rem 0;
 }
-.btn-container {
-  margin-bottom: 4rem;
+
+/* filters */
+.filters-container {
   display: flex;
+  align-items: center;
   justify-content: center;
+  margin-bottom: 4rem;
+  color: var(--text-primary);
+  border-color: var(--border-primary);
 }
-.filter-btn {
-  background: transparent;
-  border-color: var(--clr-gold);
-  font-size: 1rem;
+
+.filters-container button.filter {
   text-transform: capitalize;
-  margin: 0 0.5rem;
-  letter-spacing: 1px;
-  border-radius: var(--radius);
-  padding: 0.375rem 0.75rem;
-  color: var(--clr-gold);
-  cursor: pointer;
+  padding: 0.35rem 0.675rem;
+  border-radius: 9px;
+  border: solid 2px;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+  font-size: 1rem;
   transition: var(--transition);
+  cursor: pointer;
 }
-.filter-btn:hover {
-  background: var(--clr-gold);
-  color: var(--clr-white);
+
+.filters-container button.filter:hover {
+  background-color: var(--background-inverse);
+  color: var(--text-inverse);
+  border-color: inherit;
 }
-.section-center {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: 1170px;
+
+/* recipes */
+
+.recipes-container {
   display: grid;
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
   gap: 3rem 2rem;
   justify-items: center;
 }
-.menu-item {
-  display: grid;
-  gap: 1rem 2rem;
-  max-width: 25rem;
-}
-.photo {
-  object-fit: cover;
-  height: 200px;
-  border: 0.25rem solid var(--clr-gold);
-  border-radius: var(--radius);
-}
-.item-info header {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 0.5px dotted var(--clr-grey-5);
-}
-.item-info h4 {
-  margin-bottom: 0.5rem;
-}
-.price {
-  color: var(--clr-gold);
-}
-.item-text {
-  margin-bottom: 0;
-  padding-top: 1rem;
+
+.title {
+  /* margin auto is used when the margins are not taking up the entire space */
+  /* display block automatically takes up entire margin */
+  text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  .menu-item {
-    grid-template-columns: 225px 1fr;
-    gap: 0 1.25rem;
-    max-width: 40rem;
-  }
-  .photo {
-    height: 175px;
-  }
+.title-border {
+  border-bottom: 5px solid var(--text-primary);
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
 }
-@media screen and (min-width: 1200px) {
-  .section-center {
-    width: 95vw;
-    grid-template-columns: 1fr 1fr;
-  }
-  .photo {
-    height: 150px;
-  }
+
+.recipe {
+  display: grid;
+  max-width: 25rem;
+  gap: 1rem 1rem;
+  color: var(--text-primary);
+}
+
+.recipe-header {
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-image {
+  /* this is necessary bc column is set to auto, it will take up all space if possible */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 5px var(--background-inverse) solid;
+  border-radius: 5px;
+}
+
+p.recipe-desc {
+  padding-top: 15px;
+  color: var(--text-primary);
 }

@@ -73,27 +73,58 @@ const menu = [
   },
 ];
 
-const sectionCenter = document.querySelector(".section-center");
+const recipesCont = document.querySelector(".recipes-container");
+const filtersCont = document.querySelector(".filters-container");
 
-window.addEventListener("DOMContentLoaded", function () {
-  let displayMenu = menu.map(function (item) {
-    // console.log(item);
+window.addEventListener("DOMContentLoaded", () => {
+  // load recipes
+  loadRecipes(menu);
+  // load buttons
+  loadButtons(menu);
+});
 
-    return `<article class="menu-item">
-          <img src=${item.img} alt=${item.title} class="photo" />
-          <div class="item-info">
-            <header>
-              <h4>${item.title}</h4>
-              <h4 class="price">$${item.price}</h4>
-            </header>
-            <p class="item-text">
-              ${item.desc}
+// load recipes 
+function loadRecipes(recipes) {
+  recipesHTML = recipes.map((recipe) => {
+    return `<div class="recipe">
+          <img
+            src="${recipe.img}"
+            alt="recipe image"
+            class="recipe-image"
+          />
+          <div class="recipe-info">
+            <div class="recipe-header">
+              <h4 class="recipe-name">${recipe.title}</h4>
+              <h4 class="recipe-price">$${recipe.price}</h4>
+            </div>
+            <p class="recipe-desc">
+              ${recipe.desc}
             </p>
           </div>
-        </article>`;
+        </div>`;
   });
-  displayMenu = displayMenu.join("");
-  console.log(displayMenu);
+  recipesHTML = recipesHTML.join("");
+  recipesCont.innerHTML = recipesHTML;
+};
 
-  sectionCenter.innerHTML = displayMenu;
-});
+// load buttons
+function loadButtons(recipes) {
+  // generate categories
+  const categories = recipes.reduce((values, item) => {
+    if (!values.includes(item.category)) {
+      values.push(item.category);
+    }
+    return values;
+  }, ["all"])
+
+  // create buttons
+  categoriesHTML = categories.map((category) => {
+    return `<button class="filter" data-id=${category}>${category}</button>`;
+  });
+  categoriesHTML = categoriesHTML.join("");
+  console.log(categoriesHTML);
+  filtersCont.innerHTML = categoriesHTML;
+
+  // sort
+
+}

@@ -72,3 +72,59 @@ const menu = [
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
+
+const recipesCont = document.querySelector(".recipes-container");
+const filtersCont = document.querySelector(".filters-container");
+
+window.addEventListener("DOMContentLoaded", () => {
+  // load recipes
+  loadRecipes(menu);
+  // load buttons
+  loadButtons(menu);
+});
+
+// load recipes 
+function loadRecipes(recipes) {
+  recipesHTML = recipes.map((recipe) => {
+    return `<div class="recipe">
+          <img
+            src="${recipe.img}"
+            alt="recipe image"
+            class="recipe-image"
+          />
+          <div class="recipe-info">
+            <div class="recipe-header">
+              <h4 class="recipe-name">${recipe.title}</h4>
+              <h4 class="recipe-price">$${recipe.price}</h4>
+            </div>
+            <p class="recipe-desc">
+              ${recipe.desc}
+            </p>
+          </div>
+        </div>`;
+  });
+  recipesHTML = recipesHTML.join("");
+  recipesCont.innerHTML = recipesHTML;
+};
+
+// load buttons
+function loadButtons(recipes) {
+  // generate categories
+  const categories = recipes.reduce((values, item) => {
+    if (!values.includes(item.category)) {
+      values.push(item.category);
+    }
+    return values;
+  }, ["all"])
+
+  // create buttons
+  categoriesHTML = categories.map((category) => {
+    return `<button class="filter" data-id=${category}>${category}</button>`;
+  });
+  categoriesHTML = categoriesHTML.join("");
+  console.log(categoriesHTML);
+  filtersCont.innerHTML = categoriesHTML;
+
+  // sort
+
+}

@@ -90,6 +90,7 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 function diplayMenuItems(menuItems) {
+  // returns an array of recipes in html 
   let displayMenu = menuItems.map(function (item) {
     // console.log(item);
 
