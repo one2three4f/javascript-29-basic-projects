@@ -122,9 +122,25 @@ function loadButtons(recipes) {
     return `<button class="filter" data-id=${category}>${category}</button>`;
   });
   categoriesHTML = categoriesHTML.join("");
-  console.log(categoriesHTML);
   filtersCont.innerHTML = categoriesHTML;
 
   // sort
+  const filtersBtns = filtersCont.querySelectorAll(".filter")
+  filtersBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const category = e.currentTarget.dataset.id;
 
+      if (category == "all") {
+        console.log(menu)
+        loadRecipes(menu);
+        return;
+      }
+      filteredMenu = menu.filter((menuItem) => {
+        if (menuItem.category == category) {
+          return menuItem
+        }
+      });
+      loadRecipes(filteredMenu);
+    })
+  })
 }
