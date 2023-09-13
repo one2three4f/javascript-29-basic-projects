@@ -156,11 +156,11 @@ p {
   background: var(--clr-black);
 }
 /* section */
-.section {
+/* .section {
   padding: 5rem 0;
-}
+} */
 
-.section-center {
+/* .section-center {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
@@ -169,12 +169,12 @@ p {
   .section-center {
     width: 95vw;
   }
-}
-main {
+} */
+/* main {
   min-height: 100vh;
   display: grid;
   place-items: center;
-}
+} */
 /*
 =============== 
 Video

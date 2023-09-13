@@ -195,16 +195,18 @@ Video
   transition: var(--transition);
 }
 .hide-preloader {
+  /* hidden but can still interact with mouse */
   z-index: -999;
   visibility: hidden;
 }
 
-header {
+/* header {
   min-height: 100vh;
   position: relative;
   display: grid;
   place-items: center;
-}
+} */
+
 .video-container {
   position: absolute;
   top: 0;
@@ -239,7 +241,7 @@ h1 {
   text-transform: capitalize;
   color: var(--clr-primary-5);
 }
-.switch {
+/* .switch {
   position: absolute;
   width: 50%;
   height: 100%;
@@ -250,7 +252,7 @@ h1 {
   margin: 0;
   display: block;
   transition: var(--transition);
-}
+} */
 .slide .switch {
   left: 50%;
 }
@@ -265,3 +267,49 @@ h1 {
   background: rgba(0, 0, 0, 0.7);
   z-index: -1;
 } */
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+header {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.switch-button {
+  /* using absolute is better here, because we want it to stay at the bottom left of screen in the simplest way */
+  position: absolute;
+  bottom: 9%;
+  left: 8%;
+  height: 3rem;
+  width: 9rem;
+  color: #49a6e9;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-content: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.switch-button .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #49a6e9;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.switch-button.pause .slider {
+  left: 50%;
+}
